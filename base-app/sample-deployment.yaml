@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: testkube-demo-blue
-        image: argoproj/rollouts-demo:blue
+        image: argoproj/rollouts-demo:red
         ports:
         - containerPort: 8080
 ---
