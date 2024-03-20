@@ -14,7 +14,7 @@ export let options = {
 
 export default function () {
     // Send GET request to the Kubernetes service
-    let res = http.get('http://testkube-demo-blue-service.default');
+    let res = http.get('http://testkube-demo-blue-service.default:8080');
     // Log the response status and duration
     console.log(`Status: ${res.status}, Response time: ${res.timings.duration} ms`);
     // Sleep for a short duration between requests

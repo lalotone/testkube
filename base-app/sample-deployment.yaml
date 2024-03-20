@@ -5,7 +5,7 @@ metadata:
   labels:
     app: testkube-demo-blue
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app: testkube-demo-blue

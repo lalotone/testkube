@@ -1,0 +1,14 @@
+apiVersion: tests.testkube.io/v3
+kind: Test
+metadata:
+  name: k6-demo
+  namespace: testkube
+spec:
+  type: k6/script
+  content:
+    type: git-file
+    repository:
+      type: git
+      uri: https://github.com/lalotone/testkube.git
+      branch: main
+      path: tests/k6/sample-test.js
