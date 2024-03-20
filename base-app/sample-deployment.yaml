@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testkube-demo-blue
+  labels:
+    app: testkube-demo-blue
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: testkube-demo-blue
+  template:
+    metadata:
+      labels:
+        app: testkube-demo-blue
+    spec:
+      containers:
+      - name: testkube-demo-blue
+        image: argoproj/rollouts-demo:blue
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: testkube-demo-blue-service
+spec:
+  selector:
+    app: testkube-demo-blue
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+
